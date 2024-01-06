@@ -8,6 +8,7 @@ import '../models/category_model.dart';
 import '../models/favoritgetmodel.dart';
 import '../models/favourit_model.dart';
 
+import '../models/update.dart';
 import '../models/userdata.dart';
 import '../screens/category_screen.dart';
 import '../constance.dart';
@@ -111,14 +112,31 @@ class shopBloc extends Cubit<shopstates> {
   void userdata() {
     diohelper.getdata(path:'profile', token: token).then((value) {
       userdatamodel = UserModel.formjason(value.data);
-      print("sssssssssssheper${userdatamodel?.status}");
-      print("sssssssssssheper${userdatamodel?.data?.email}");
       emit(userdatasucc());
     }).catchError((e) {
-      print("sssssssssssheper${e}");
+
       emit(userdatafail());
     });
   }
+  UpdateUserModel? updateuserdatamodel;
 
+  void ubdateuserdata({
+    required String phone,
+    required String name,
+    required String email,
+  }) {
+    diohelper.putdata(path: 'update-profile', token: token,
+        data: {"name": name,
+          "phone": phone,
+          "email": email,
+          "password": "123456",
+        }).then((value) {
+      updateuserdatamodel = UpdateUserModel.formjason(value.data);
+      print(token);
+      emit(userubdatedatasucc());
+    }).catchError((e) {
+      emit(userudatedatafail());
+    });
+  }
 
 }

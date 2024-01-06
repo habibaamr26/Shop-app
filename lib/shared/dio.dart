@@ -51,6 +51,8 @@ class diohelper {
     return dio.post(path,queryParameters:queryParameters,data: data );
   }
 
+
+
  static Future<Response> putdata({
     String lang="en",
     String? token,

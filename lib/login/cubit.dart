@@ -18,6 +18,8 @@ class shopCubit extends Cubit<states>
     emit(securitylogin());
   }
 
+
+
   void logindata(
   {
    required String email,

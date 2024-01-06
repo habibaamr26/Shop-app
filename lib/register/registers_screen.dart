@@ -22,6 +22,7 @@ class register extends StatelessWidget {
   var namecontroller = TextEditingController();
   var phonecontroller = TextEditingController();
   var passwordcontroller = TextEditingController();
+
   var formkey = GlobalKey<FormState>();
 
   @override
@@ -124,6 +125,7 @@ class register extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
+
                   reusabletext(
                     prefixicon: Icons.phone,
                     controller: phonecontroller,
@@ -137,6 +139,7 @@ class register extends StatelessWidget {
                     },
                     keyboardtype: TextInputType.phone,
                   ),
+
                   const SizedBox(
                     height: 10,
                   ),
@@ -175,7 +178,8 @@ class register extends StatelessWidget {
                   ),
                   ConditionalBuilder(
                       condition: state is! loadingreg,
-                      builder: (context) => buttonreusable(
+                      builder: (context) =>
+                          buttonreusable(
                           hinttext: 'Register',
                           onpreesed: () {
                             if (formkey.currentState!.validate()) {
@@ -191,7 +195,12 @@ class register extends StatelessWidget {
                       fallback: (context) =>
                           Center(child: CircularProgressIndicator())),
 
-
+                  SizedBox(height: 15,),
+                  buttonreusable(
+                      hinttext: 'Login',
+                      onpreesed: () {
+                       Navigator.pop(context);
+                      }),
                 ],
               ),
             ),
