@@ -43,8 +43,8 @@ class ShopLayout extends StatelessWidget {
           },
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.home),label: "Home"),
-            BottomNavigationBarItem(icon: Icon(Icons.category),label: "Category"),
-            BottomNavigationBarItem(icon: Icon(Icons.favorite_border),label: "Favourite"),
+            BottomNavigationBarItem(icon: Icon(Icons.list),label: "Category"),
+            BottomNavigationBarItem(icon: Icon(Icons.favorite_border),label: "Favorite"),
             BottomNavigationBarItem(icon: Icon(Icons.settings),label: "Settings"),
           ],
 

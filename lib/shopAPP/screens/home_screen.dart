@@ -85,6 +85,7 @@ class Home extends StatelessWidget {
 }
 
 Widget buildGridView(Product model, context) => Container(
+
       color: Colors.white,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -104,6 +105,7 @@ Widget buildGridView(Product model, context) => Container(
                 )
             ],
           ),
+          const SizedBox(height: 9,),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
